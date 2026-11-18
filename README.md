@@ -73,7 +73,7 @@
 - 顺次删除连续 10 Mb 并重新估计协方差及全部参数，10 次时间估计在 1,853–2,073 代之间，保留比例在 75.92%–77.07% 之间。对应 block jackknife 标准误约为 204 代和 1.12 个百分点。删除 2 Mb 的 50 次检查见结果表。这里的范围描述删段敏感性。
 - 祖先有效大小估计约 23,350，当前约 17,874。两者是模型的有效群体大小。题目给定 μ = 3.42 × 10⁻⁸ /bp/generation 和测序长度 100,000,000 bp，用于绝对定标。
 
-![模拟验证与 Final 删段敏感性](results/optimization/validation.png)
+[模拟验证结果表](results/review/summary.tsv) · [Final 删段敏感性](results/optimization/optimized_jackknife_summary.tsv)。完整项目的验证图保存在 `results/optimization/validation.png`，运行最终拟合脚本时也会生成。
 
 ## 复现
 
