@@ -1,0 +1,2 @@
+incumbent	challenger	selected	replicates	scenarios_improved	paired_wins	relative_gain	gain_interval_low	gain_interval_high	bootstrap_draws	generations	fraction
+block_gls	adaptive_gls	block_gls	40	2	18	0.005331525672546689	-0.01710483295962308	0.030251685828909095	10000	1961.326267785825	0.7654675823454838

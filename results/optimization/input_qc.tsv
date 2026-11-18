@@ -1,0 +1,3 @@
+round	synapse_id	version	md5	total_records	excluded	retained	extra_records_at_shared_positions	last_record_counts_equal_app	retained_AA_equals_ALT
+testing	syn74933321	2	8f12cba8d8f65076d3abe242d56b8a86	1194350	0	1194350	7715	True	0
+final	syn74933318	3	3d38a487825c2641ca7def0d6b311ffb	1588748	0	1588748	13226		0

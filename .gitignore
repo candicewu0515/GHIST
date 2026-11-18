@@ -1,0 +1,18 @@
+# Official inputs and reproducible intermediates are kept in the local distribution.
+data/*
+!data/*_synapse_manifest.csv
+results/*
+!results/review/
+results/review/*
+!results/review/summary.tsv
+!results/review/decision.tsv
+!results/optimization/
+results/optimization/*
+!results/optimization/input_qc.tsv
+!results/optimization/simulation_summary.tsv
+!results/optimization/coordinate_sensitivity.tsv
+!results/optimization/optimized_jackknife_summary.tsv
+releases/
+submission/*.zip
+__pycache__/
+.DS_Store
