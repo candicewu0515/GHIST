@@ -1,12 +1,14 @@
 # GHIST 2026 · Bottleneck
 
-[提交状态和后续结果](STATUS.md)
+[提交状态和后续结果](STATUS.md) · [完整英文方法稿 v2](submission/GHIST_Bottleneck_Writeup_v2.md) · [English reproduction guide](REPRODUCIBILITY.md)
+
+本仓库目前为 **private**。2026 年 11 月 19 日再次检查时，Synapse writeup 页面仍显示 **“Writeups Currently Not Accepted”**；方法稿尚未正式提交，consortium-level authorship 尚未确认。当前仅整理文档。
 
 ## Final 参赛文件
 
 **`submission/bottleneck.final.yaml`** 是当前选定的 Final 预测。标准 VCF 组的两个参数估计为 **1,961.3 代**和 **0.765468**。种群在这次收缩后保留了约 76.55% 的祖先有效群体大小，相当于减少了 23.45%。已按个人身份正式提交。官方提交号为 **9785337**，RRMSE 为 **0.7227318443058701**。
 
-评分文件上传到个人或团队的 Synapse Project 的 Files 后，在赛题页选择标准 Bottleneck 的 Final 提交。Final 仅有一次机会。申请 consortium-level authorship 还需用同一参赛身份另交公开的 Project Wiki。英文草稿在 `submission/GHIST_Bottleneck_Writeup.md`，方法稿将沿用本次个人参赛身份。2026 年 11 月 18 日查看时，Wiki 教程显示暂不接收 writeup。赛程主页列出的预测截止时间是 11 月 20 日 23:59 UTC（美国中部时间 17:59），文件教程另写 12 月 1 日。这里采用较早的主页时间。[赛程](https://www.synapse.org/Synapse:syn74803798/wiki/) · [文件教程](https://www.synapse.org/Synapse:syn74803798/wiki/640752) · [方法说明与署名](https://www.synapse.org/Synapse:syn74803798/wiki/640743)
+Final 预测已经评分并锁定，不再修改或重新提交。申请 consortium-level authorship 仍需在与 Final 相同的个人身份下，按官方要求另行提交公开的 Project Wiki；GitHub 文档本身不等于正式 writeup 提交。完整英文稿见 `submission/GHIST_Bottleneck_Writeup_v2.md`，原短稿 `submission/GHIST_Bottleneck_Writeup.md` 保留。赛事主页列出的提交截止时间为 2026 年 11 月 20 日 23:59 UTC；writeup 指南未单独列出截止时间或开放日期。[赛程](https://www.synapse.org/Synapse:syn74803798/wiki/) · [writeup 指南](https://www.synapse.org/Synapse:syn74803798/wiki/640753)
 
 ## 本次独立复核
 
@@ -40,12 +42,12 @@
 
 | 目录 | 内容 |
 |---|---|
-| `submission/` | 正式提交文件 `bottleneck.final.yaml` |
-| `data/` | 官方 VCF、下载清单及等位基因频谱 |
+| `submission/` | 已锁定预测、原英文短稿和完整英文稿 v2 |
+| `data/` | GitHub 仅含官方输入清单；VCF 与频谱在本地复现时获取或生成 |
 | `scripts/` | 数据处理、拟合、模拟与独立复核脚本 |
-| `results/optimization/` | 首轮方法比较、验证图及 80 组模拟结果 |
-| `results/review/` | 连续染色体模拟输入、五种方法的结果及替换决定 |
-| `results/baseline/` | Testing 与 Final 的基线拟合结果 |
+| `results/optimization/` | 已归档汇总表；频谱矩阵、逐次模拟结果与验证图由本地分析生成 |
+| `results/review/` | 五种方法的汇总结果与替换决定；逐次模拟输入需本地生成 |
+| `results/baseline/` | 本地运行基线拟合后生成，不包含在 GitHub 归档中 |
 
 ## 为什么选择新方法
 
@@ -77,6 +79,8 @@
 
 ## 复现
 
+详细英文步骤见 [REPRODUCIBILITY.md](REPRODUCIBILITY.md)。在单独的工作副本中运行，以免覆盖归档结果表。历史 `scripts/finalize.py` 会替换已锁定的预测文件，因此已从下列复现步骤移除；不要对本次参赛记录运行该脚本。
+
 本次使用 R 4.5.2、phyclust 0.1-34、bcftools 1.23.1、scrm 1.7.5 和带 NumPy、SciPy、Matplotlib、scikit-learn 的 Python 3.13。优化脚本需要 Python 3.11 或更新版本。以下命令从项目根目录运行。本地完整包包含 VCF、频谱与模拟矩阵。GitHub 版保存代码、最终预测、方法稿、输入清单及汇总表。复算时，先下载下方两个官方 VCF 和主办方示例频谱到 `data/`，使用脚本中对应的文件名，再执行下列命令。
 
 ```sh
@@ -92,11 +96,11 @@ python scripts/make_blocks.py
 Rscript --vanilla scripts/simulate.R results/optimization/simulated_blocks
 Rscript --vanilla scripts/simulate_review.R results/review/chromosomes
 python scripts/compare.py results/optimization/simulated_blocks
-python scripts/finalize.py
+python scripts/review.py
 Rscript --vanilla scripts/check_gls.R results/optimization/final_blocks.tsv results/review/official_fits.tsv final block_gls
 ```
 
-基线参数以 TSV 保存。唯一的参赛 YAML 统一生成到 `submission/bottleneck.final.yaml`。验证图、模拟误差、参数对照、坐标敏感性和分段检查表位于 `results/optimization/`。运行脚本不会向赛事平台提交。
+基线参数以 TSV 保存。上述步骤重新计算拟合与模型选择表，不写入已锁定的 YAML，也不向赛事平台提交。坐标敏感性、jackknife 与验证图属于历史 `finalize.py` 的输出，本流程保留其已有汇总表，不重新生成。记录的历史 Python 依赖没有完整版本锁定，跨环境复现需记录实际软件版本。
 
 ## 来源
 
