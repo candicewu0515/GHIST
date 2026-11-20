@@ -16,7 +16,7 @@
 
 - Chrome 登录状态下复核：[writeup 指南](https://www.synapse.org/Synapse:syn74803798/wiki/640753)仍显示 **“Writeups Currently Not Accepted”**。页面没有可用提交按钮，也未列出单独的 writeup 截止时间或开放日期。
 - 按当前指示停止 Synapse 提交流程：本次未编辑主 Wiki，未更改共享权限，未提交 writeup。已锁定的 Final 预测和评分记录保持不变。
-- GitHub 仓库保持 **private**。新增完整英文方法稿 v2 和复现指南，保留原英文短稿。方法稿准备完成不等于正式提交成功，consortium-level authorship **尚未确认**。
+- GitHub 仓库经本人确认已设为 **public**，代码与英文方法稿可公开访问。新增完整英文方法稿 v2 和复现指南，保留原英文短稿。方法稿准备完成不等于正式提交成功，consortium-level authorship **尚未确认**。
 - 本次仅核对代码与已有结果表、整理文档；未下载或上传 VCF、未重跑分析、未改动分析脚本或预测文件。复现步骤移除了会覆盖预测的 `finalize.py`，改用 `review.py` 重算拟合与选择表。
 
 ## 2026-11-19 较早跟进记录

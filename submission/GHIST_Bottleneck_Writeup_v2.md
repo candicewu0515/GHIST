@@ -6,7 +6,7 @@ Candice Wu, University of Iowa. Synapse username: **candicewu**. This was an ind
 
 Project: [syn78752926](https://www.synapse.org/Synapse:syn78752926). Scored Final submission: **9785337**. Code: [candicewu0515/GHIST](https://github.com/candicewu0515/GHIST).
 
-This document describes the existing scored prediction. It is a revised methods draft, not a confirmation of a Synapse writeup submission. As checked on November 19, 2026 (America/Chicago), the writeup instructions displayed “Writeups Currently Not Accepted.” The GitHub repository is currently private.
+This document describes the existing scored prediction. It is a revised methods draft, not a confirmation of a Synapse writeup submission. As checked on November 19, 2026 (America/Chicago), the writeup instructions displayed “Writeups Currently Not Accepted.” The GitHub repository is publicly accessible.
 
 ## Summary
 
@@ -70,7 +70,7 @@ Keeping only the last record per Final position changed the inferred time to 1,9
 
 The code and archived summary tables are in [candicewu0515/GHIST](https://github.com/candicewu0515/GHIST). The [reproduction guide](../REPRODUCIBILITY.md) documents input versions, required filenames, software, and commands that do not regenerate the locked prediction file. The original brief draft is retained separately.
 
-The repository contains source code, input manifests, summary statistics, and the historical prediction artifact. It does not distribute the challenge VCFs or raw data. Access to the input data must be obtained separately through the organizer. Repository access is currently private, so this link alone does not make the methods publicly accessible or satisfy the Synapse writeup submission requirement.
+The repository contains source code, input manifests, summary statistics, and the historical prediction artifact. It does not distribute the challenge VCFs or raw data. Access to the input data must be obtained separately through the organizer. The repository and this methods draft are publicly accessible. Public GitHub access alone does not satisfy the separate Synapse Project Wiki and writeup submission requirements.
 
 The main limitations are the restricted two-epoch model, reliance on correct ancestral states and absolute mutation/length calibration, sensitivity to repeated-coordinate conventions, limited simulation scenarios, and approximate linkage simulation. The final official score should be used when describing challenge performance. No rank, award, or consortium-level authorship is claimed by this document.
 

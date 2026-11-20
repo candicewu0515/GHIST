@@ -2,7 +2,7 @@
 
 [提交状态和后续结果](STATUS.md) · [完整英文方法稿 v2](submission/GHIST_Bottleneck_Writeup_v2.md) · [English reproduction guide](REPRODUCIBILITY.md)
 
-本仓库目前为 **private**。2026 年 11 月 19 日再次检查时，Synapse writeup 页面仍显示 **“Writeups Currently Not Accepted”**；方法稿尚未正式提交，consortium-level authorship 尚未确认。当前仅整理文档。
+本仓库已设为 **public**，代码与英文方法稿可公开访问。2026 年 11 月 19 日再次检查时，Synapse writeup 页面仍显示 **“Writeups Currently Not Accepted”**；方法稿尚未正式提交，consortium-level authorship 尚未确认。当前仅整理文档。
 
 ## Final 参赛文件
 
